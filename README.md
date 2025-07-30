@@ -27,7 +27,7 @@ Throughout this project, we will be following Software Development standards whi
 - Documentation
 
 ## File Structure
-
+```
 SD_JavaCrud/                        # Root project directory
 ├── README.md
 ├── database/
@@ -45,7 +45,7 @@ SD_JavaCrud/                        # Root project directory
 │   └── SearchTest.java             # Unit testing for search functionality
 └── lib
     └── mysql-connector-j-9.4.0.jar    # JDBC driver for communicating with MySQL db
-
+```
 
 This file structure isn't final -- we may separate certain classes even further if deemed necessary, but this should include everything minimally required for the project.
 
