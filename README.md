@@ -3,11 +3,11 @@ A terminal-based class project for performing CRUD operations on a mock Employee
 
 ## Authors
 
-Abir Chowdhury
-Amara Irobi
-Cristin Khor
-Kayla Thornton
-Kenny Pham
+Abir Chowdhury 
+Amara Irobi 
+Cristin Khor 
+Kayla Thornton 
+Kenny Pham 
 
 
 ## Overview
