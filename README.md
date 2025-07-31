@@ -30,12 +30,15 @@ Throughout this project, we will be following Software Development standards whi
 ```
 SD_JavaCrud/                        # Root project directory
 ├── README.md
+├── DBVars.env
 ├── database/
 │   └── schema.sql                  # SQL script for Employee table
 ├── src/
-│   ├── Employee.java               # Employee entity class
+│   ├── IEmployee.java              # Employee interface
 │   ├── EmployeeService.java        # Employee business logic methods + validation
 │   ├── EmployeeDAO.java            # Employee data access methods
+│   ├── PartEmployee.java           # Part-time Employee class
+│   ├── FullEmployee.java           # Full-time Employee class
 │   ├── ReportGenerator.java 
 │   ├── Main.java                   # Terminal UI + user input validation
 │   └── DBUtil.java                 # Database connection
@@ -62,7 +65,7 @@ We will each run our own instance of a local MySQL database server. The schema.s
 
 
 1. Create a new MySQL database in DBeaver (like we did in the lab)
-2. Create a DBVars.env file. It should be formatted as such:
+2. Create a DBVars.env file in the root project directory. It should be formatted as such:
 
 ```
 DB_URL=jdbc:mysql://localhost:3306/yourdbname
