@@ -64,17 +64,26 @@ schema.sql isn't necessary since we'll be connected to a shared database server,
 We will each run our own instance of a local MySQL database server. The schema.sql file will ensure all of our databases have the same "starting point," so we're roughly on the same page. DBUtil.java handles the database connection, but if you notice, the connection parameters are gathered via a System.getenv method call. It's best practice to keep the login credentials for your database server encrypted or off of a public GitHub repository. That being said, you will have to create a .env file with the information needed for your system to fetch before running the program.
 
 
-1. Create a new MySQL database in DBeaver (like we did in the lab)
+1. Initialize our SQL Schema
+
+Redirect back to the project's root directory -- i.e., type "cd ../" in the PowerShell if you're currently in the src/ directory.
+
+Locate where your MySQL Server 8.0 folder is within your system and run the following command (replace the file path with your MySQL Server 8.0's path if it's different):
+```
+Get-Content database\schema.sql | & "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u user -p
+```
+
+It will ask for you to enter your database's password; upon doing so, it will execute the script into your MySQL database server -- creating the Employee table and filling it with 30 rows of data.
+
 2. Create a DBVars.env file in the root project directory. It should be formatted as such:
 
 ```
-DB_URL=jdbc:mysql://localhost:3306/yourdbname
+DB_URL=jdbc:mysql://localhost:3306/Group6ProjectB
 DB_USER=yourdbusername
 DB_PASS=yourdbpassword
 ```
 
-3. Open PowerShell (preferably an instance in VS Code)
-4. Run these commands sequentially:
+3. Run these commands in PowerShell sequentially:
 
 ```
 .\load-env.ps1 # This will load the environment variables from your DBVars.env file for the current PowerShell instance. After the current PowerShell instance is terminated, your system does not persist storage of these variables, so you'd have to run these commands again.
