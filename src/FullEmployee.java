@@ -1,14 +1,16 @@
 public class FullEmployee implements IEmployee {
-    public String fullName;
+    public String firstName;
+    public String lastName;
     private int socialSecurity;
     public double salary;
     public String jobTitle;
     public String division;
     public String status;
 
-    public FullEmployee(String name, int ssn, double sal, String title, 
+    public FullEmployee(String fname, String lname, int ssn, double sal, String title, 
     String div, String stat){
-        fullName = name;
+        firstName = fname;
+        lastName = lname;
         socialSecurity = ssn;
         salary = sal;
         jobTitle = title;
@@ -18,13 +20,38 @@ public class FullEmployee implements IEmployee {
 
     // Getters and setters
     @Override
-    public void getName(){
-        System.out.println("Employee: " + fullName);
+    public String getFirstName(){
+        return "Employee First Name: " + firstName;
+    }
+
+    @Override
+    public String getLastName(){
+        return "Employee Last Name: " + lastName;
+    }
+
+    @Override
+    public String getSalary(){
+        return "Employee salary: " + salary;
+    }
+
+    @Override
+    public String getJobTitle(){
+        return "Job: " + jobTitle;
+    }
+
+    @Override
+    public String getDivision(){
+        return "Employee division: " + division;
+    }
+
+    @Override
+    public String getStatus(){
+        return "Employee status: " + status;
     }
 
     @Override
     public void getFullInfo(){
-        System.out.println("Displaying employee: " + fullName);
+        System.out.println("Displaying employee: " + firstName + " " + lastName);
         System.out.println("SSN: ********* ");
         System.out.println("Employee Status " + status);
         System.out.println("Salary: " + salary);
